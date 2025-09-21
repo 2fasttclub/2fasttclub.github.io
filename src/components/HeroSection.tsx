@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/2fastt-logo.png";
+import logo from "@/assets/2fastt-logo-clean.jpeg";
 
 const HeroSection = () => {
   return (

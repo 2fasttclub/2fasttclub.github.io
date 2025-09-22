@@ -11,8 +11,8 @@ const Team = () => {
       bio: "Started 2FASTT to build the inclusive running community Rutgers was missing. Believes every runner has a story worth celebrating.",
       year: "Senior",
       major: "Exercise Science",
-      favoriteDistance: "Half Marathon",
-      runningGoal: "Sub-1:30 half marathon",
+      funFact: "Has run in 15 different states and counting",
+      whyIRun: "Running taught me that limits are just starting points",
     },
     {
       name: "Sam Chen", 
@@ -20,8 +20,8 @@ const Team = () => {
       bio: "Passionate about making running accessible to everyone. Organizes our social events and ensures no one gets left behind.",
       year: "Junior",
       major: "Kinesiology",
-      favoriteDistance: "5K",
-      runningGoal: "Complete first marathon",
+      funFact: "Once ran a 5K dressed as a superhero for charity",
+      whyIRun: "For the mental clarity and the amazing people I've met",
     },
     {
       name: "Maya Patel",
@@ -29,8 +29,8 @@ const Team = () => {
       bio: "Former track athlete who loves helping others discover their potential. Plans our weekly workouts and training programs.",
       year: "Sophomore", 
       major: "Sports Management",
-      favoriteDistance: "10K",
-      runningGoal: "Qualify for Boston Marathon",
+      funFact: "Holds the high school record for 1600m in her hometown",
+      whyIRun: "To push boundaries and inspire others to find their strength",
     },
     {
       name: "Jordan Kim",
@@ -38,8 +38,8 @@ const Team = () => {
       bio: "The creative force behind our community events. Makes sure every run ends with good vibes and great memories.",
       year: "Junior",
       major: "Communications",
-      favoriteDistance: "Fun Run",
-      runningGoal: "Run in all 5 boroughs of NYC",
+      funFact: "Creates custom playlists for every group run",
+      whyIRun: "Because every mile is better when shared with friends",
     },
   ];
 
@@ -79,10 +79,13 @@ const Team = () => {
                   <p className="text-muted-foreground mb-4">{member.bio}</p>
                   <div className="space-y-2 text-sm">
                     <div>
-                      <span className="font-medium text-brand-red">Favorite Distance:</span> {member.favoriteDistance}
+                      <span className="font-medium text-brand-red">Year & Major:</span> {member.year}, {member.major}
                     </div>
                     <div>
-                      <span className="font-medium text-brand-red">Current Goal:</span> {member.runningGoal}
+                      <span className="font-medium text-brand-red">Fun Fact:</span> {member.funFact}
+                    </div>
+                    <div>
+                      <span className="font-medium text-brand-red">Why I Run:</span> {member.whyIRun}
                     </div>
                   </div>
                 </CardContent>

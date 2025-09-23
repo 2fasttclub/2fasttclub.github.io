@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import matthewPhoto from "@/assets/matthew-team-photo.jpg";
+import aaronPhoto from "@/assets/aaron-team-photo.jpg";
 
 const Team = () => {
   const leadership = [
@@ -18,7 +19,7 @@ const Team = () => {
     {
       name: "Aaron C.", 
       role: "Technical Lead",
-      bio: "Passionate about making running accessible to everyone. Organizes our social events and ensures no one gets left behind.",
+      bio: "Aaron oversees all technical aspects of the club, including the development and maintenance of this website.",
       year: "Sophomore",
       major: "Computer Engineering",
       funFact: "I am a self taught barber",
@@ -67,6 +68,12 @@ const Team = () => {
                           src={matthewPhoto} 
                           alt={member.name}
                           className="object-cover object-[center_15%]"
+                        />
+                      ) : index === 1 ? (
+                        <AvatarImage 
+                          src={aaronPhoto} 
+                          alt={member.name}
+                          className="object-cover object-center"
                         />
                       ) : null}
                       <AvatarFallback className="bg-brand-red text-white text-lg">

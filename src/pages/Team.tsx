@@ -2,7 +2,7 @@ import Navigation from "@/components/Navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import matthewPhoto from "@/assets/matthew-team-photo.png";
+import matthewPhoto from "@/assets/matthew-team-photo.jpg";
 
 const Team = () => {
   const leadership = [
@@ -66,7 +66,7 @@ const Team = () => {
                         <AvatarImage 
                           src={matthewPhoto} 
                           alt={member.name}
-                          className="object-cover object-[center_20%]"
+                          className="object-cover object-[center_15%]"
                         />
                       ) : null}
                       <AvatarFallback className="bg-brand-red text-white text-lg">

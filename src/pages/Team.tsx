@@ -61,7 +61,7 @@ const Team = () => {
               <Card key={index} className="hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <div className="flex items-start gap-4">
-                    <Avatar className="h-16 w-16">
+                    <Avatar className="h-20 w-20">
                       {index === 0 ? (
                         <AvatarImage 
                           src={matthewPhoto} 

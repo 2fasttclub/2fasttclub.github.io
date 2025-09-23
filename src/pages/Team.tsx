@@ -1,7 +1,8 @@
 import Navigation from "@/components/Navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import matthewPhoto from "@/assets/matthew-team-photo.png";
 
 const Team = () => {
   const leadership = [
@@ -61,6 +62,13 @@ const Team = () => {
                 <CardHeader>
                   <div className="flex items-start gap-4">
                     <Avatar className="h-16 w-16">
+                      {index === 0 ? (
+                        <AvatarImage 
+                          src={matthewPhoto} 
+                          alt={member.name}
+                          className="object-cover object-[center_20%]"
+                        />
+                      ) : null}
                       <AvatarFallback className="bg-brand-red text-white text-lg">
                         {member.name.split(' ').map(n => n[0]).join('')}
                       </AvatarFallback>

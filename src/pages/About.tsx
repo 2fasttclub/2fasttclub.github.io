@@ -33,7 +33,7 @@ const About = () => {
                   <img 
                     src={matthewFounder} 
                     alt="Matthew, Founder of 2FASTT"
-                    className="w-64 h-80 object-cover rounded-lg shadow-lg mx-auto border-2 border-brand-red/20"
+                    className="w-80 h-96 object-cover rounded-lg shadow-lg mx-auto border-2 border-brand-red/20"
                   />
                 </div>
                 <div className="space-y-2">

@@ -37,7 +37,7 @@ const Navigation = () => {
               </Link>
             ))}
             <Button variant="brand" size="sm" asChild>
-              <a href="https://groupme.com/join_group/97825435/VW3rhzI5" target="_blank" rel="noopener noreferrer">
+              <a href="https://groupme.com/join_group/110452030/TN5hbw4T" target="_blank" rel="noopener noreferrer">
                 Join the Club
               </a>
             </Button>
@@ -71,7 +71,7 @@ const Navigation = () => {
               ))}
               <div className="px-3 py-2">
                 <Button variant="brand" size="sm" className="w-full" asChild>
-                  <a href="https://groupme.com/join_group/97825435/VW3rhzI5" target="_blank" rel="noopener noreferrer">
+                  <a href="https://groupme.com/join_group/110452030/TN5hbw4T" target="_blank" rel="noopener noreferrer">
                     Join the Club
                   </a>
                 </Button>

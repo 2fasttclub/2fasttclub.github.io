@@ -41,7 +41,7 @@ const Contact = () => {
                   <div>
                     <p className="font-medium">Join our GroupMe</p>
                     <Button variant="link" asChild className="p-0 h-auto text-brand-red">
-                      <a href="https://groupme.com/join_group/97825435/VW3rhzI5" target="_blank" rel="noopener noreferrer">
+                      <a href="https://groupme.com/join_group/110452030/TN5hbw4T" target="_blank" rel="noopener noreferrer">
                         Click to join the group chat
                       </a>
                     </Button>
@@ -54,8 +54,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-medium">Email us</p>
-                    <a href="mailto:2fastt.rutgers@gmail.com" className="text-brand-red hover:underline">
-                      2fastt.rutgers@gmail.com
+                    <a href="mailto:2fasttclub@gmail.com" className="text-brand-red hover:underline">
+                      2fasttclub@gmail.com
                     </a>
                   </div>
                 </div>
@@ -66,8 +66,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-medium">Follow us on Instagram</p>
-                    <a href="https://instagram.com/2fastt_rutgers" target="_blank" rel="noopener noreferrer" className="text-brand-red hover:underline">
-                      @2fastt_rutgers
+                    <a href="https://instagram.com/2fasttclub" target="_blank" rel="noopener noreferrer" className="text-brand-red hover:underline">
+                      @2fasttclub
                     </a>
                   </div>
                 </div>
@@ -134,7 +134,7 @@ const Contact = () => {
               Come to any run - we'll make sure you feel welcome from day one.
             </p>
             <Button variant="brand" asChild>
-              <a href="https://groupme.com/join_group/97825435/VW3rhzI5" target="_blank" rel="noopener noreferrer">
+              <a href="https://groupme.com/join_group/110452030/TN5hbw4T" target="_blank" rel="noopener noreferrer">
                 Join the Club Today
               </a>
             </Button>

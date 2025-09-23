@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import matthewFounder from "@/assets/matthew-founder.jpeg";
 
 const About = () => {
   return (
@@ -17,7 +18,7 @@ const About = () => {
               welcomes all paces, all backgrounds, and all levels of experience.
             </p>
             
-            <div className="grid md:grid-cols-2 gap-8 mt-12">
+            <div className="grid md:grid-cols-2 gap-12 mt-12 items-center">
               <div className="space-y-6">
                 <h2 className="text-2xl font-semibold text-brand-red">Our Mission</h2>
                 <p className="text-muted-foreground">
@@ -27,15 +28,21 @@ const About = () => {
                 </p>
               </div>
               
-              <div className="space-y-6">
-                <h2 className="text-2xl font-semibold text-brand-red">What We Do</h2>
-                <ul className="space-y-3 text-muted-foreground">
-                  <li>• Weekly group runs for all skill levels</li>
-                  <li>• Social events and team building activities</li>
-                  <li>• Running workshops and technique sessions</li>
-                  <li>• Local race participation opportunities</li>
-                  <li>• Supportive community for fitness goals</li>
-                </ul>
+              <div className="text-center space-y-4">
+                <div className="relative">
+                  <img 
+                    src={matthewFounder} 
+                    alt="Matthew, Founder of 2FASTT"
+                    className="w-64 h-80 object-cover rounded-lg shadow-lg mx-auto border-2 border-brand-red/20"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <h3 className="text-xl font-semibold text-brand-red">Matthew F.</h3>
+                  <p className="text-muted-foreground font-medium">Founder of 2FASTT</p>
+                  <p className="text-sm text-muted-foreground italic">
+                    "Building the inclusive running community Rutgers was missing"
+                  </p>
+                </div>
               </div>
             </div>
             

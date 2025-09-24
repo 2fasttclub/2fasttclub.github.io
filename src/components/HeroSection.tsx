@@ -3,7 +3,7 @@ import logo from "@/assets/2fastt-logo-clean.jpeg";
 
 const HeroSection = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-background">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-background pt-16">
       {/* Background gradient effect */}
       <div 
         className="absolute inset-0 opacity-20"

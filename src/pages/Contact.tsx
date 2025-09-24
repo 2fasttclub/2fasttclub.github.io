@@ -5,12 +5,51 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, MessageCircle, Instagram, Users } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
+import { useState } from "react";
 
 const Contact = () => {
-  const handleSubmit = (e: React.FormEvent) => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission - this would typically send to a backend
-    alert("Thanks for your message! We'll get back to you soon.");
+    setIsSubmitting(true);
+    
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    
+    const contactData = {
+      name: formData.get('name') as string,
+      email: formData.get('email') as string,
+      subject: formData.get('subject') as string,
+      message: formData.get('message') as string,
+    };
+
+    try {
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: contactData
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "Message sent!",
+        description: "Thanks for reaching out! We'll get back to you soon.",
+      });
+      
+      form.reset();
+    } catch (error) {
+      console.error('Error sending message:', error);
+      toast({
+        title: "Error sending message",
+        description: "Please try again or email us directly at 2fasttclub@gmail.com",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -95,32 +134,33 @@ const Contact = () => {
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="space-y-2">
                     <Label htmlFor="name">Name</Label>
-                    <Input id="name" placeholder="Your name" required />
+                    <Input id="name" name="name" placeholder="Your name" required />
                   </div>
                   
                   <div className="space-y-2">
                     <Label htmlFor="email">Email</Label>
-                    <Input id="email" type="email" placeholder="your.email@rutgers.edu" required />
+                    <Input id="email" name="email" type="email" placeholder="your.email@rutgers.edu" required />
                   </div>
                   
                   <div className="space-y-2">
                     <Label htmlFor="subject">Subject</Label>
-                    <Input id="subject" placeholder="What's this about?" required />
+                    <Input id="subject" name="subject" placeholder="What's this about?" required />
                   </div>
                   
                   <div className="space-y-2">
                     <Label htmlFor="message">Message</Label>
                     <Textarea 
                       id="message" 
+                      name="message"
                       placeholder="Tell us about yourself, your running experience, or any questions you have!"
                       className="min-h-[120px]"
                       required
                     />
                   </div>
                   
-                  <Button type="submit" variant="brand" className="w-full">
+                  <Button type="submit" variant="brand" className="w-full" disabled={isSubmitting}>
                     <MessageCircle className="h-4 w-4 mr-2" />
-                    Send Message
+                    {isSubmitting ? "Sending..." : "Send Message"}
                   </Button>
                 </form>
               </CardContent>

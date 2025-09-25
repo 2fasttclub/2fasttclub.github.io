@@ -3,6 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // Check if redirect is present in sessionStorage and restore it
+      (function(l) {
+        if (sessionStorage.redirect) {
+          var redirect = sessionStorage.redirect;
+          delete sessionStorage.redirect;
+          if (redirect && redirect !== l.href) {
+            history.replaceState(null, null, redirect);
+          }
+        }
+      }(window.location))
+    </script>
     <link rel="icon" href="/src/assets/2fastt-logo-clean.jpeg" type="image/jpeg">
     <title>2FASTT - RU RUNNING? | Campus Running Club</title>
     <meta name="description" content="Join 2FASTT, the chill social running club on campus. Whether you run every day or just want to jog and meet people - no pressure, just community." />

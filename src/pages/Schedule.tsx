@@ -5,9 +5,9 @@ import { Clock, MapPin, Users } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Schedule = () => {
-  const [titleRef, titleVisible] = useScrollAnimation();
-  const [cardsRef, cardsVisible] = useScrollAnimation();
-  const [infoRef, infoVisible] = useScrollAnimation();
+  const [titleRef, titleVisible] = useScrollAnimation<HTMLHeadingElement>();
+  const [cardsRef, cardsVisible] = useScrollAnimation<HTMLDivElement>();
+  const [infoRef, infoVisible] = useScrollAnimation<HTMLDivElement>();
 
   const weeklyRuns = [
     {

@@ -3,11 +3,11 @@ import matthewFounder from "@/assets/matthew-founder.jpeg";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const About = () => {
-  const [titleRef, titleVisible] = useScrollAnimation();
-  const [introRef, introVisible] = useScrollAnimation();
-  const [missionRef, missionVisible] = useScrollAnimation();
-  const [founderRef, founderVisible] = useScrollAnimation();
-  const [communityRef, communityVisible] = useScrollAnimation();
+  const [titleRef, titleVisible] = useScrollAnimation<HTMLHeadingElement>();
+  const [introRef, introVisible] = useScrollAnimation<HTMLParagraphElement>();
+  const [missionRef, missionVisible] = useScrollAnimation<HTMLDivElement>();
+  const [founderRef, founderVisible] = useScrollAnimation<HTMLDivElement>();
+  const [communityRef, communityVisible] = useScrollAnimation<HTMLDivElement>();
 
   return (
     <div className="min-h-screen bg-background">

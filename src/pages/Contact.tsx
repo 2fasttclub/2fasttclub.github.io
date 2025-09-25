@@ -11,9 +11,9 @@ import { useState } from "react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Contact = () => {
-  const [titleRef, titleVisible] = useScrollAnimation();
-  const [cardsRef, cardsVisible] = useScrollAnimation();
-  const [ctaRef, ctaVisible] = useScrollAnimation();
+  const [titleRef, titleVisible] = useScrollAnimation<HTMLHeadingElement>();
+  const [cardsRef, cardsVisible] = useScrollAnimation<HTMLDivElement>();
+  const [ctaRef, ctaVisible] = useScrollAnimation<HTMLDivElement>();
 
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);

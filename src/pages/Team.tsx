@@ -7,9 +7,9 @@ import aaronPhoto from "@/assets/aaron-team-photo.jpg";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Team = () => {
-  const [titleRef, titleVisible] = useScrollAnimation();
-  const [teamRef, teamVisible] = useScrollAnimation();
-  const [involvedRef, involvedVisible] = useScrollAnimation();
+  const [titleRef, titleVisible] = useScrollAnimation<HTMLHeadingElement>();
+  const [teamRef, teamVisible] = useScrollAnimation<HTMLDivElement>();
+  const [involvedRef, involvedVisible] = useScrollAnimation<HTMLDivElement>();
 
   const leadership = [
     {

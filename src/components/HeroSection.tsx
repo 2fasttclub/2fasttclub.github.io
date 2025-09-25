@@ -3,12 +3,12 @@ import logo from "@/assets/2fastt-logo-clean.jpeg";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const HeroSection = () => {
-  const [heroRef, heroVisible] = useScrollAnimation();
-  const [logoRef, logoVisible] = useScrollAnimation();
-  const [titleRef, titleVisible] = useScrollAnimation();
-  const [descRef, descVisible] = useScrollAnimation();
-  const [ctaRef, ctaVisible] = useScrollAnimation();
-  const [merchRef, merchVisible] = useScrollAnimation();
+  const [heroRef, heroVisible] = useScrollAnimation<HTMLDivElement>();
+  const [logoRef, logoVisible] = useScrollAnimation<HTMLDivElement>();
+  const [titleRef, titleVisible] = useScrollAnimation<HTMLHeadingElement>();
+  const [descRef, descVisible] = useScrollAnimation<HTMLParagraphElement>();
+  const [ctaRef, ctaVisible] = useScrollAnimation<HTMLButtonElement>();
+  const [merchRef, merchVisible] = useScrollAnimation<HTMLDivElement>();
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-background pt-16">

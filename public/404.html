@@ -28,9 +28,17 @@
   </head>
   <body>
     <script type="text/javascript">
-      // Immediately redirect to index.html with the path as a query parameter
-      sessionStorage.redirect = location.href;
-      location.replace(location.href.split('?')[0].replace(location.pathname, '/index.html'));
+      // Store the current URL and redirect to index.html with path as query parameter
+      var pathSegmentsToKeep = 1; // Change to 0 if using custom domain, 1 for GitHub Pages
+      
+      var l = window.location;
+      var redirect = l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash;
+      
+      window.location.replace(redirect);
     </script>
   </body>
 </html>

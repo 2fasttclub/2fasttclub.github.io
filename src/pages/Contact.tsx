@@ -8,8 +8,13 @@ import { Mail, MessageCircle, Instagram, Users } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Contact = () => {
+  const [titleRef, titleVisible] = useScrollAnimation();
+  const [cardsRef, cardsVisible] = useScrollAnimation();
+  const [ctaRef, ctaVisible] = useScrollAnimation();
+
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -57,17 +62,17 @@ const Contact = () => {
       <Navigation />
       <main className="container mx-auto px-4 pt-24 pb-12">
         <section className="max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center bg-gradient-to-r from-brand-red to-brand-red-light bg-clip-text text-transparent">
+          <h1 ref={titleRef} className={`text-4xl md:text-5xl font-bold mb-4 text-center bg-gradient-to-r from-brand-red to-brand-red-light bg-clip-text text-transparent neon-glow-subtle fade-in-up ${titleVisible ? 'animate' : ''}`}>
             Get In Touch
           </h1>
-          <p className="text-xl text-muted-foreground text-center mb-12">
+          <p className={`text-xl text-muted-foreground text-center mb-12 fade-in-up delay-200 ${titleVisible ? 'animate' : ''}`}>
             Ready to join our running community? We'd love to hear from you!
           </p>
           
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card>
+          <div ref={cardsRef} className={`grid md:grid-cols-2 gap-8 fade-in-up delay-300 ${cardsVisible ? 'animate' : ''}`}>
+            <Card className="hover:neon-border transition-all duration-300">
               <CardHeader>
-                <CardTitle className="text-2xl text-brand-red">Contact Information</CardTitle>
+                <CardTitle className="text-2xl text-brand-red neon-glow-subtle">Contact Information</CardTitle>
                 <CardDescription>
                   Reach out to us through any of these channels
                 </CardDescription>
@@ -112,7 +117,7 @@ const Contact = () => {
                 </div>
 
                 <div className="pt-4 border-t">
-                  <h3 className="font-semibold mb-3 text-brand-red">Meeting Times</h3>
+                  <h3 className="font-semibold mb-3 text-brand-red neon-glow-subtle">Meeting Times</h3>
                   <div className="space-y-2 text-sm text-muted-foreground">
                     <p>🏃 Monday, Wednesday, Friday: 6:00 PM</p>
                     <p>🏃 Saturday: 9:00 AM</p>
@@ -123,9 +128,9 @@ const Contact = () => {
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="hover:neon-border transition-all duration-300">
               <CardHeader>
-                <CardTitle className="text-2xl text-brand-red">Send us a Message</CardTitle>
+                <CardTitle className="text-2xl text-brand-red neon-glow-subtle">Send us a Message</CardTitle>
                 <CardDescription>
                   Have questions? Want to get involved? Drop us a line!
                 </CardDescription>
@@ -158,7 +163,7 @@ const Contact = () => {
                     />
                   </div>
                   
-                  <Button type="submit" variant="brand" className="w-full" disabled={isSubmitting}>
+                  <Button type="submit" variant="brand" className="w-full neon-border" disabled={isSubmitting}>
                     <MessageCircle className="h-4 w-4 mr-2" />
                     {isSubmitting ? "Sending..." : "Send Message"}
                   </Button>
@@ -167,13 +172,13 @@ const Contact = () => {
             </Card>
           </div>
 
-          <div className="mt-12 bg-card p-8 rounded-lg border text-center">
-            <h2 className="text-2xl font-semibold mb-4 text-brand-red">New to Campus?</h2>
+          <div ref={ctaRef} className={`mt-12 bg-card p-8 rounded-lg border text-center neon-border fade-in-up delay-500 ${ctaVisible ? 'animate' : ''}`}>
+            <h2 className="text-2xl font-semibold mb-4 text-brand-red neon-glow-subtle">New to Campus?</h2>
             <p className="text-muted-foreground mb-4">
               Don't know anyone yet? Perfect! 2FASTT is where many of our members made their first friends at Rutgers. 
               Come to any run - we'll make sure you feel welcome from day one.
             </p>
-            <Button variant="brand" asChild>
+            <Button variant="brand" asChild className="neon-border">
               <a href="https://groupme.com/join_group/110452030/TN5hbw4T" target="_blank" rel="noopener noreferrer">
                 Join the Club Today
               </a>

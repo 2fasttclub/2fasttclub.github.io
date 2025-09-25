@@ -2,8 +2,13 @@ import Navigation from "@/components/Navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Clock, MapPin, Users } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Schedule = () => {
+  const [titleRef, titleVisible] = useScrollAnimation();
+  const [cardsRef, cardsVisible] = useScrollAnimation();
+  const [infoRef, infoVisible] = useScrollAnimation();
+
   const weeklyRuns = [
     {
       day: "Monday",
@@ -44,19 +49,19 @@ const Schedule = () => {
       <Navigation />
       <main className="container mx-auto px-4 pt-24 pb-12">
         <section className="max-w-6xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center bg-gradient-to-r from-brand-red to-brand-red-light bg-clip-text text-transparent">
+          <h1 ref={titleRef} className={`text-4xl md:text-5xl font-bold mb-4 text-center bg-gradient-to-r from-brand-red to-brand-red-light bg-clip-text text-transparent neon-glow-subtle fade-in-up ${titleVisible ? 'animate' : ''}`}>
             Weekly Schedule
           </h1>
-          <p className="text-xl text-muted-foreground text-center mb-12">
+          <p className={`text-xl text-muted-foreground text-center mb-12 fade-in-up delay-200 ${titleVisible ? 'animate' : ''}`}>
             Join us for regular runs throughout the week. All paces welcome!
           </p>
           
-          <div className="grid md:grid-cols-2 gap-6 mb-12">
+          <div ref={cardsRef} className={`grid md:grid-cols-2 gap-6 mb-12 fade-in-up delay-300 ${cardsVisible ? 'animate' : ''}`}>
             {weeklyRuns.map((run, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
+              <Card key={index} className={`hover:shadow-lg transition-all duration-300 hover:neon-border fade-in-up delay-${(index + 1) * 100}`}>
                 <CardHeader>
                   <div className="flex justify-between items-start">
-                    <CardTitle className="text-xl text-brand-red">{run.day}</CardTitle>
+                    <CardTitle className="text-xl text-brand-red neon-glow-subtle">{run.day}</CardTitle>
                     <Badge variant="secondary">{run.type}</Badge>
                   </div>
                   <CardDescription className="text-base">{run.description}</CardDescription>
@@ -81,8 +86,8 @@ const Schedule = () => {
             ))}
           </div>
 
-          <div className="bg-card p-8 rounded-lg border text-center">
-            <h2 className="text-2xl font-semibold mb-4 text-brand-red">New to Running?</h2>
+          <div ref={infoRef} className={`bg-card p-8 rounded-lg border text-center neon-border fade-in-up delay-500 ${infoVisible ? 'animate' : ''}`}>
+            <h2 className="text-2xl font-semibold mb-4 text-brand-red neon-glow-subtle">New to Running?</h2>
             <p className="text-muted-foreground mb-6">
               Don't worry about pace or distance. Our community is here to support you every step of the way. 
               Show up, have fun, and we'll help you build your running confidence naturally.

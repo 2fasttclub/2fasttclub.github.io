@@ -4,8 +4,13 @@ import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import matthewPhoto from "@/assets/matthew-team-photo.jpg";
 import aaronPhoto from "@/assets/aaron-team-photo.jpg";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Team = () => {
+  const [titleRef, titleVisible] = useScrollAnimation();
+  const [teamRef, teamVisible] = useScrollAnimation();
+  const [involvedRef, involvedVisible] = useScrollAnimation();
+
   const leadership = [
     {
       name: "Matthew F.",
@@ -50,16 +55,16 @@ const Team = () => {
       <Navigation />
       <main className="container mx-auto px-4 pt-24 pb-12">
         <section className="max-w-6xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center bg-gradient-to-r from-brand-red to-brand-red-light bg-clip-text text-transparent">
+          <h1 ref={titleRef} className={`text-4xl md:text-5xl font-bold mb-4 text-center bg-gradient-to-r from-brand-red to-brand-red-light bg-clip-text text-transparent neon-glow-subtle fade-in-up ${titleVisible ? 'animate' : ''}`}>
             Meet The Team
           </h1>
-          <p className="text-xl text-muted-foreground text-center mb-12">
+          <p className={`text-xl text-muted-foreground text-center mb-12 fade-in-up delay-200 ${titleVisible ? 'animate' : ''}`}>
             The passionate runners leading our community
           </p>
           
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <div ref={teamRef} className={`grid md:grid-cols-2 gap-8 mb-12 fade-in-up delay-300 ${teamVisible ? 'animate' : ''}`}>
             {leadership.map((member, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
+              <Card key={index} className={`hover:shadow-lg transition-all duration-300 hover:neon-border fade-in-up delay-${(index + 2) * 100}`}>
                 <CardHeader>
                   <div className="flex items-start gap-4">
                     <Avatar className="h-20 w-20">
@@ -81,7 +86,7 @@ const Team = () => {
                       </AvatarFallback>
                     </Avatar>
                     <div className="flex-1">
-                      <CardTitle className="text-xl text-brand-red">{member.name}</CardTitle>
+                      <CardTitle className="text-xl text-brand-red neon-glow-subtle">{member.name}</CardTitle>
                       <CardDescription className="text-base font-medium">{member.role}</CardDescription>
                       <div className="flex gap-2 mt-2">
                         <Badge variant="outline">{member.year}</Badge>
@@ -108,8 +113,8 @@ const Team = () => {
             ))}
           </div>
 
-          <div className="bg-card p-8 rounded-lg border text-center">
-            <h2 className="text-2xl font-semibold mb-4 text-brand-red">Want to Get Involved?</h2>
+          <div ref={involvedRef} className={`bg-card p-8 rounded-lg border text-center neon-border fade-in-up delay-500 ${involvedVisible ? 'animate' : ''}`}>
+            <h2 className="text-2xl font-semibold mb-4 text-brand-red neon-glow-subtle">Want to Get Involved?</h2>
             <p className="text-muted-foreground mb-6">
               We're always looking for passionate runners to help grow our community. Whether you want to 
               lead a workout, organize events, or just share your love of running, there's a place for you 

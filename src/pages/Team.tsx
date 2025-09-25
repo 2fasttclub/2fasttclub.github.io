@@ -11,6 +11,8 @@ const Team = () => {
   const [teamRef, teamVisible] = useScrollAnimation<HTMLDivElement>();
   const [involvedRef, involvedVisible] = useScrollAnimation<HTMLDivElement>();
 
+  console.log('Team component render:', { titleVisible, teamVisible, involvedVisible });
+
   const leadership = [
     {
       name: "Matthew F.",

@@ -9,6 +9,8 @@ const Schedule = () => {
   const [cardsRef, cardsVisible] = useScrollAnimation<HTMLDivElement>();
   const [infoRef, infoVisible] = useScrollAnimation<HTMLDivElement>();
 
+  console.log('Schedule component render:', { titleVisible, cardsVisible, infoVisible });
+
   const weeklyRuns = [
     {
       day: "Monday",

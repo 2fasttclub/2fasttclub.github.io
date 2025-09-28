@@ -22,7 +22,7 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
             <img src={logo} alt="2FASTT Logo" className="h-8 w-8" />
-            <span className="text-xl font-bold text-foreground">2FASTT</span>
+            <span className="text-xl font-bold text-foreground neon-glow-subtle">2FASTT</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -31,7 +31,7 @@ const Navigation = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className="text-muted-foreground hover:text-foreground transition-colors duration-300"
+                className="text-muted-foreground hover:text-foreground transition-colors duration-300 neon-glow-subtle"
               >
                 {item.name}
               </Link>
@@ -63,7 +63,7 @@ const Navigation = () => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className="block px-3 py-2 text-muted-foreground hover:text-foreground transition-colors duration-300"
+                  className="block px-3 py-2 text-muted-foreground hover:text-foreground transition-colors duration-300 neon-glow-subtle"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}

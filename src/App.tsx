@@ -9,12 +9,14 @@ import Schedule from "./pages/Schedule";
 import Team from "./pages/Team";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import ParticleBackground from "./components/ParticleBackground";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
+      <ParticleBackground />
       <Toaster />
       <Sonner />
       <BrowserRouter>

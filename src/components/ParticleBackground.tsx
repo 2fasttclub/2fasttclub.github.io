@@ -37,14 +37,14 @@ const ParticleBackground = () => {
       vx: (Math.random() - 0.5) * 0.5,
       vy: (Math.random() - 0.5) * 0.5,
       life: 0,
-      maxLife: Math.random() * 300 + 200,
-      size: Math.random() * 3 + 1,
+      maxLife: Math.random() * 200 + 150,
+      size: Math.random() * 4 + 2,
     });
 
     // Initialize particles
     const initParticles = () => {
       particlesRef.current = [];
-      for (let i = 0; i < 50; i++) {
+      for (let i = 0; i < 80; i++) {
         particlesRef.current.push(createParticle());
       }
     };
@@ -93,8 +93,8 @@ const ParticleBackground = () => {
         );
         
         // Use CSS custom property for brand red color
-        gradient.addColorStop(0, `rgba(239, 68, 68, ${alpha})`); // Red center
-        gradient.addColorStop(0.5, `rgba(239, 68, 68, ${alpha * 0.6})`); // Red middle
+        gradient.addColorStop(0, `rgba(239, 68, 68, ${alpha * 0.8})`); // Red center
+        gradient.addColorStop(0.5, `rgba(239, 68, 68, ${alpha * 0.4})`); // Red middle
         gradient.addColorStop(1, `rgba(239, 68, 68, 0)`); // Transparent edge
 
         ctx.save();
@@ -128,8 +128,7 @@ const ParticleBackground = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none z-0"
-      style={{ mixBlendMode: 'screen' }}
+      className="fixed inset-0 pointer-events-none z-10"
     />
   );
 };

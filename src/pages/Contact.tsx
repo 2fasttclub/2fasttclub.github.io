@@ -119,9 +119,6 @@ const Contact = () => {
                 <div className="pt-4 border-t">
                   <h3 className="font-semibold mb-3 text-brand-red neon-glow-subtle">Meeting Times</h3>
                   <div className="space-y-2 text-sm text-muted-foreground">
-                    <p>🏃 Monday, Wednesday, Friday: 6:00 PM</p>
-                    <p>🏃 Saturday: 9:00 AM</p>
-                    <p>📍 Various campus locations</p>
                     <p>Check our GroupMe for weekly updates!</p>
                   </div>
                 </div>

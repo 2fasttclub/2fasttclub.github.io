@@ -26,7 +26,7 @@ const Team = () => {
     {
       name: "Aaron C.", 
       role: "Technical Lead",
-      bio: "Aaron oversees all technical aspects of the club, including the development and maintenance of this website.",
+      bio: "Oversees all technical aspects of the club, including the development and maintenance of this website.",
       year: "Sophomore",
       major: "Computer Engineering",
       funFact: "I am a self taught barber",

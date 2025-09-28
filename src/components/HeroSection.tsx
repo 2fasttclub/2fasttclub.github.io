@@ -42,9 +42,9 @@ const HeroSection = () => {
 
         {/* Description */}
         <p ref={descRef} className={`text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed fade-in-up delay-400 ${descVisible ? 'animate' : ''}`}>
-          I started 2FASTT because I always wanted a chill, social run club on campus. 
+          "I started 2FASTT because I always wanted a chill, social run club on campus. 
           This is a space for anyone, whether you run every day or just want to jog and meet people.{" "}
-          <span className="text-primary font-semibold">No pressure. Just community.</span>
+          <span className="text-primary font-semibold">No pressure. Just community.</span>" - Matthew
         </p>
 
         {/* CTA Button */}

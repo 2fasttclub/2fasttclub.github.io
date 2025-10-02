@@ -40,7 +40,7 @@ const Team = () => {
       year: "Sophomore",
       major: "Bio",
       funFact: "PinkPantheress used to be my camp counselor",
-      whyIRun: "To improve my overall health and to release built up stress from within.",
+      whyIRun: "To improve my overall health and to release built up stress from within",
     },
     {
       name: "TBD",

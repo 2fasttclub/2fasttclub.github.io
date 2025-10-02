@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import matthewPhoto from "@/assets/matthew-team-photo.jpg";
 import aaronPhoto from "@/assets/aaron-team-photo.jpg";
+import breannaPhoto from "@/assets/IMG_4460.jpeg";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Team = () => {
@@ -77,10 +78,16 @@ const Team = () => {
                           className="object-cover object-[center_15%]"
                         />
                       ) : index === 1 ? (
-                        <AvatarImage 
-                          src={aaronPhoto} 
+                        <AvatarImage
+                          src={aaronPhoto}
                           alt={member.name}
                           className="object-cover object-center"
+                        />
+                      ) : index === 2 ? (
+                        <AvatarImage
+                          src={breannaPhoto}
+                          alt={member.name}
+                          className="object-cover object-top"
                         />
                       ) : null}
                       <AvatarFallback className="bg-brand-red text-white text-lg">

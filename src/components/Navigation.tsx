@@ -9,6 +9,7 @@ const Navigation = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [isNearTop, setIsNearTop] = useState(false);
   const [hasInteracted, setHasInteracted] = useState(false);
+  const [hideTimeout, setHideTimeout] = useState<NodeJS.Timeout | null>(null);
 
   const navItems = [
     { name: "Home", href: "/" },
@@ -21,15 +22,30 @@ const Navigation = () => {
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       if (e.clientY < 150) {
+        // Clear any pending hide timeout when mouse enters area
+        if (hideTimeout) {
+          clearTimeout(hideTimeout);
+          setHideTimeout(null);
+        }
         setIsNearTop(true);
       } else {
-        setIsNearTop(false);
+        // Add delay before hiding
+        if (!hideTimeout) {
+          const timeout = setTimeout(() => {
+            setIsNearTop(false);
+            setHideTimeout(null);
+          }, 300); // 300ms delay before starting to hide
+          setHideTimeout(timeout);
+        }
       }
     };
 
     window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      if (hideTimeout) clearTimeout(hideTimeout);
+    };
+  }, [hideTimeout]);
 
   useEffect(() => {
     if (!hasInteracted) {

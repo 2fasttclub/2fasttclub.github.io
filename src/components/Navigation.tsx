@@ -45,7 +45,7 @@ const Navigation = () => {
   return (
     <nav
       onMouseEnter={() => setHasInteracted(true)}
-      className={`fixed left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border transition-transform duration-500 ease-in-out ${
+      className={`fixed left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border transition-transform duration-700 ease-in-out ${
         isVisible ? "top-0 translate-y-0" : "-top-20 -translate-y-full"
       }`}
     >

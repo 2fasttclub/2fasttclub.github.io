@@ -60,7 +60,7 @@ const Schedule = () => {
           
           <div ref={cardsRef} className={`grid md:grid-cols-2 gap-6 mb-12 fade-in-up delay-300 ${cardsVisible ? 'animate' : ''}`}>
             {weeklyRuns.map((run, index) => (
-              <Card key={index} className={`hover:shadow-lg transition-all duration-300 hover:neon-border fade-in-up delay-${(index + 1) * 100} ${cardsVisible ? 'animate' : ''}`}>
+              <Card key={index} className={`hover:shadow-lg hover:shadow-red-500/30 transition-all duration-300 hover:neon-border fade-in-up delay-${(index + 1) * 100} ${cardsVisible ? 'animate' : ''}`}>
                 <CardHeader>
                   <div className="flex justify-between items-start">
                     <CardTitle className="text-xl text-brand-red neon-glow-subtle">{run.day}</CardTitle>

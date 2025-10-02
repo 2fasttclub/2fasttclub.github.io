@@ -6,8 +6,9 @@ import logo from "@/assets/2fastt-logo-clean.jpeg";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const [isNearTop, setIsNearTop] = useState(false);
+  const [hasInteracted, setHasInteracted] = useState(false);
 
   const navItems = [
     { name: "Home", href: "/" },
@@ -31,16 +32,19 @@ const Navigation = () => {
   }, []);
 
   useEffect(() => {
-    if (isNearTop) {
+    if (!hasInteracted) {
+      setIsVisible(true);
+    } else if (isNearTop) {
       setIsVisible(true);
     } else {
       setIsVisible(false);
       setIsMenuOpen(false);
     }
-  }, [isNearTop]);
+  }, [isNearTop, hasInteracted]);
 
   return (
     <nav
+      onMouseEnter={() => setHasInteracted(true)}
       className={`fixed left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border transition-transform duration-500 ease-in-out ${
         isVisible ? "top-0 translate-y-0" : "-top-20 -translate-y-full"
       }`}

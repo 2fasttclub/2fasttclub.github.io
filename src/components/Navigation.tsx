@@ -20,7 +20,7 @@ const Navigation = () => {
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      if (e.clientY < 100) {
+      if (e.clientY < 150) {
         setIsNearTop(true);
       } else {
         setIsNearTop(false);

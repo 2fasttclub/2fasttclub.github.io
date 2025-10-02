@@ -87,7 +87,7 @@ const Team = () => {
                         <AvatarImage
                           src={breannaPhoto}
                           alt={member.name}
-                          className="object-cover object-top"
+                          className="object-cover object-[55%_20%]"
                         />
                       ) : null}
                       <AvatarFallback className="bg-brand-red text-white text-lg">

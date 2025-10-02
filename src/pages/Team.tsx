@@ -21,7 +21,7 @@ const Team = () => {
       year: "Sophomore",
       major: "Bio",
       funFact: "I put milk b4 the cereal",
-      whyIRun: "My way to lock in after a long weekend",
+      whyIRun: "To clear my head & challenge myself",
     },
     {
       name: "Aaron C.", 

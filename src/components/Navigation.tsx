@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -6,6 +6,8 @@ import logo from "@/assets/2fastt-logo-clean.jpeg";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const [isNearTop, setIsNearTop] = useState(false);
 
   const navItems = [
     { name: "Home", href: "/" },
@@ -15,8 +17,34 @@ const Navigation = () => {
     { name: "Contact", href: "/contact" },
   ];
 
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (e.clientY < 100) {
+        setIsNearTop(true);
+      } else {
+        setIsNearTop(false);
+      }
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
+  useEffect(() => {
+    if (isNearTop) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+      setIsMenuOpen(false);
+    }
+  }, [isNearTop]);
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+    <nav
+      className={`fixed left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border transition-transform duration-500 ease-in-out ${
+        isVisible ? "top-0 translate-y-0" : "-top-20 -translate-y-full"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}

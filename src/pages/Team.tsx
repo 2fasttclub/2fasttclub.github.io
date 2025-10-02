@@ -67,7 +67,7 @@ const Team = () => {
           
           <div ref={teamRef} className={`grid md:grid-cols-2 gap-8 mb-12 fade-in-up delay-300 ${teamVisible ? 'animate' : ''}`}>
             {leadership.map((member, index) => (
-              <Card key={index} className={`hover:shadow-lg transition-all duration-300 hover:neon-border fade-in-up delay-${(index + 2) * 100} ${teamVisible ? 'animate' : ''}`}>
+              <Card key={index} className={`hover:shadow-lg hover:shadow-red-500/30 transition-all duration-300 hover:neon-border fade-in-up delay-${(index + 2) * 100} ${teamVisible ? 'animate' : ''}`}>
                 <CardHeader>
                   <div className="flex items-start gap-4">
                     <Avatar className="h-20 w-20">

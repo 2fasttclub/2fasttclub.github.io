@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import matthewPhoto from "@/assets/matthew-team-photo.jpg";
 import aaronPhoto from "@/assets/aaron-team-photo.jpg";
-import breannaPhoto from "@/assets/breanna-team-photo.png";
+import breannaPhoto from "@/assets/IMG_4460.jpeg";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Team = () => {
@@ -87,7 +87,7 @@ const Team = () => {
                         <AvatarImage
                           src={breannaPhoto}
                           alt={member.name}
-                          className="object-contain object-center"
+                          className="object-cover object-[55%_20%] scale-110"
                         />
                       ) : null}
                       <AvatarFallback className="bg-brand-red text-white text-lg">

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -6,10 +6,6 @@ import logo from "@/assets/2fastt-logo-clean.jpeg";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
-  const [isNearTop, setIsNearTop] = useState(false);
-  const [hasInteracted, setHasInteracted] = useState(false);
-  const [hideTimeout, setHideTimeout] = useState<NodeJS.Timeout | null>(null);
 
   const navItems = [
     { name: "Home", href: "/" },
@@ -19,52 +15,9 @@ const Navigation = () => {
     { name: "Contact", href: "/contact" },
   ];
 
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (e.clientY < 150) {
-        // Clear any pending hide timeout when mouse enters area
-        if (hideTimeout) {
-          clearTimeout(hideTimeout);
-          setHideTimeout(null);
-        }
-        setIsNearTop(true);
-      } else {
-        // Add delay before hiding
-        if (!hideTimeout) {
-          const timeout = setTimeout(() => {
-            setIsNearTop(false);
-            setHideTimeout(null);
-          }, 300); // 300ms delay before starting to hide
-          setHideTimeout(timeout);
-        }
-      }
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-      if (hideTimeout) clearTimeout(hideTimeout);
-    };
-  }, [hideTimeout]);
-
-  useEffect(() => {
-    if (!hasInteracted) {
-      setIsVisible(true);
-    } else if (isNearTop) {
-      setIsVisible(true);
-    } else {
-      setIsVisible(false);
-      setIsMenuOpen(false);
-    }
-  }, [isNearTop, hasInteracted]);
-
   return (
-    <nav
-      onMouseEnter={() => setHasInteracted(true)}
-      className={`fixed left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border transition-transform duration-700 ease-in-out ${
-        isVisible ? "top-0 translate-y-0" : "-top-20 -translate-y-full"
-      }`}
-    >
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}

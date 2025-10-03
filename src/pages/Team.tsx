@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import matthewPhoto from "@/assets/matthew-team-photo.jpg";
-import aaronPhoto from "@/assets/aaron-team-photo.jpg";
+import aaronPhoto from "@/assets/aaron-team-photo-new.jpg";
 import breannaPhoto from "@/assets/breanna-team-photo.png";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 

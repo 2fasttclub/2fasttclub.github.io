@@ -17,7 +17,7 @@ const Team = () => {
   const leadership = [
     {
       name: "Matthew F.",
-      role: "Founder",
+      role: "Founder/Run Leader",
       bio: "Started 2FASTT to build the inclusive running community Rutgers was missing. Believes every runner has a story worth celebrating.",
       year: "Sophomore",
       major: "Bio",

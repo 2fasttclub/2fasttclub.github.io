@@ -81,7 +81,7 @@ const Team = () => {
                         <AvatarImage
                           src={aaronPhoto}
                           alt={member.name}
-                          className="object-cover object-center"
+                          className="object-cover object-center scale-110"
                         />
                       ) : index === 2 ? (
                         <AvatarImage

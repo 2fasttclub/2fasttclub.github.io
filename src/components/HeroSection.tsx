@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Sparkles, ShoppingBag } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Sparkles, ShoppingBag, Users, Heart, Zap } from "lucide-react";
 import logo from "@/assets/2fastt-logo-clean.jpeg";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
@@ -10,6 +11,7 @@ const HeroSection = () => {
   const [titleRef, titleVisible] = useScrollAnimation<HTMLHeadingElement>();
   const [descRef, descVisible] = useScrollAnimation<HTMLParagraphElement>();
   const [ctaRef, ctaVisible] = useScrollAnimation<HTMLButtonElement>();
+  const [featuresRef, featuresVisible] = useScrollAnimation<HTMLDivElement>();
   const [merchRef, merchVisible] = useScrollAnimation<HTMLDivElement>();
 
   return (
@@ -25,11 +27,14 @@ const HeroSection = () => {
       <div ref={heroRef} className={`max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 fade-in-up ${heroVisible ? 'animate' : ''}`}>
         {/* Logo */}
         <div ref={logoRef} className={`mb-8 flex justify-center fade-in-up delay-100 ${logoVisible ? 'animate' : ''}`}>
-          <img 
-            src={logo} 
-            alt="2FASTT Logo" 
-            className="h-32 w-32 md:h-40 md:w-40 animate-pulse"
-          />
+          <div className="relative">
+            <div className="absolute inset-0 bg-brand-red/20 blur-3xl rounded-full animate-pulse"></div>
+            <img
+              src={logo}
+              alt="2FASTT Logo"
+              className="h-32 w-32 md:h-40 md:w-40 relative z-10 rounded-full border-4 border-brand-red/30 shadow-xl shadow-brand-red/50"
+            />
+          </div>
         </div>
 
         {/* Main Title */}
@@ -42,19 +47,43 @@ const HeroSection = () => {
           RU RUNNING?
         </h2>
 
-        {/* Description */}
-        <p ref={descRef} className={`text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed fade-in-up delay-400 ${descVisible ? 'animate' : ''}`}>
-          "I started 2FASTT because I always wanted a chill, social run club on campus. 
-          This is a space for anyone, whether you run every day or just want to jog and meet people.{" "}
-          <span className="text-primary font-semibold">No pressure. Just community.</span>" - Matthew
-        </p>
+        {/* Description Card */}
+        <Card ref={descRef} className={`max-w-3xl mx-auto mb-12 bg-gradient-to-br from-brand-red/5 to-background border-brand-red/20 neon-border fade-in-up delay-400 ${descVisible ? 'animate' : ''}`}>
+          <CardContent className="p-6 md:p-8">
+            <div className="flex items-start gap-3 mb-4">
+              <Heart className="w-6 h-6 text-brand-red flex-shrink-0 mt-1" />
+              <p className="text-lg md:text-xl text-foreground leading-relaxed text-left">
+                "I started 2FASTT because I always wanted a chill, social run club on campus.
+                This is a space for anyone, whether you run every day or just want to jog and meet people.{" "}
+                <span className="text-primary font-semibold">No pressure. Just community.</span>"
+              </p>
+            </div>
+            <p className="text-right text-sm text-muted-foreground font-medium">— Matthew, Founder</p>
+          </CardContent>
+        </Card>
+
+        {/* Feature Badges */}
+        <div ref={featuresRef} className={`flex flex-wrap justify-center gap-3 mb-8 fade-in-up delay-450 ${featuresVisible ? 'animate' : ''}`}>
+          <Badge variant="outline" className="px-4 py-2 text-sm border-brand-red/30 hover:bg-brand-red/10 transition-colors">
+            <Users className="w-4 h-4 mr-2" />
+            All Levels Welcome
+          </Badge>
+          <Badge variant="outline" className="px-4 py-2 text-sm border-brand-red/30 hover:bg-brand-red/10 transition-colors">
+            <Heart className="w-4 h-4 mr-2" />
+            Social & Supportive
+          </Badge>
+          <Badge variant="outline" className="px-4 py-2 text-sm border-brand-red/30 hover:bg-brand-red/10 transition-colors">
+            <Zap className="w-4 h-4 mr-2" />
+            No Pressure Runs
+          </Badge>
+        </div>
 
         {/* CTA Button */}
         <Button
           ref={ctaRef}
-          variant="brand" 
-          size="lg" 
-          className={`text-lg px-8 py-6 rounded-full transform hover:scale-105 transition-all duration-300 neon-border fade-in-up delay-500 ${ctaVisible ? 'animate' : ''}`}
+          variant="brand"
+          size="lg"
+          className={`text-lg px-8 py-6 rounded-full transform hover:scale-105 transition-all duration-300 neon-border shadow-lg shadow-brand-red/30 hover:shadow-xl hover:shadow-brand-red/50 fade-in-up delay-500 ${ctaVisible ? 'animate' : ''}`}
           onClick={() => window.open("https://groupme.com/join_group/110452030/TN5hbw4T", "_blank")}
         >
           Join the Club

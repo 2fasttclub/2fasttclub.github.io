@@ -51,6 +51,24 @@ const Team = () => {
       funFact: "TBD",
       whyIRun: "TBD",
     },
+    {
+      name: "TBD",
+      role: "TBD",
+      bio: "TBD",
+      year: "TBD",
+      major: "TBD",
+      funFact: "TBD",
+      whyIRun: "TBD",
+    },
+    {
+      name: "TBD",
+      role: "TBD",
+      bio: "TBD",
+      year: "TBD",
+      major: "TBD",
+      funFact: "TBD",
+      whyIRun: "TBD",
+    },
   ];
 
   return (

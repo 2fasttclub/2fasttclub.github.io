@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Sparkles, ShoppingBag, Users, Heart, Zap } from "lucide-react";
+import { Sparkles, ShoppingBag, Users, Heart, Zap, PersonStanding } from "lucide-react";
 import logo from "@/assets/2fastt-logo-clean.jpeg";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
@@ -51,7 +51,7 @@ const HeroSection = () => {
         <Card ref={descRef} className={`max-w-3xl mx-auto mb-12 bg-gradient-to-br from-brand-red/5 to-background border-brand-red/20 neon-border fade-in-up delay-400 ${descVisible ? 'animate' : ''}`}>
           <CardContent className="p-6 md:p-8">
             <div className="flex items-start gap-3 mb-4">
-              <Heart className="w-6 h-6 text-brand-red flex-shrink-0 mt-1" />
+              <PersonStanding className="w-6 h-6 text-brand-red flex-shrink-0 mt-1" />
               <p className="text-lg md:text-xl text-foreground leading-relaxed text-left">
                 "I started 2FASTT because I always wanted a chill, social run club on campus.
                 This is a space for anyone, whether you run every day or just want to jog and meet people.{" "}

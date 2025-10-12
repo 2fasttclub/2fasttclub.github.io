@@ -62,18 +62,18 @@ const Contact = () => {
       <Navigation />
       <main className="container mx-auto px-4 pt-24 pb-12">
         <section className="max-w-4xl mx-auto">
-          <h1 ref={titleRef} className={`text-4xl md:text-5xl font-bold mb-4 text-center bg-gradient-to-r from-brand-red to-brand-red-light bg-clip-text text-transparent neon-glow-subtle fade-in-up ${titleVisible ? 'animate' : ''}`}>
+          <h1 ref={titleRef} className={`text-5xl md:text-6xl font-extrabold mb-6 text-center bg-gradient-to-r from-brand-red via-brand-red-light to-brand-red bg-clip-text text-transparent neon-glow-subtle tracking-tight fade-in-up ${titleVisible ? 'animate' : ''}`}>
             Get In Touch
           </h1>
-          <p className={`text-xl text-muted-foreground text-center mb-12 fade-in-up delay-200 ${titleVisible ? 'animate' : ''}`}>
-            Ready to join our running community? We'd love to hear from you!
+          <p className={`text-xl md:text-2xl text-muted-foreground text-center mb-16 max-w-3xl mx-auto leading-relaxed fade-in-up delay-200 ${titleVisible ? 'animate' : ''}`}>
+            Ready to join our <span className="text-brand-red font-semibold">running community?</span> We'd love to hear from you!
           </p>
           
           <div ref={cardsRef} className={`grid md:grid-cols-2 gap-8 fade-in-up delay-300 ${cardsVisible ? 'animate' : ''}`}>
-            <Card className="hover:neon-border transition-all duration-300">
-              <CardHeader>
-                <CardTitle className="text-2xl text-brand-red neon-glow-subtle">Contact Information</CardTitle>
-                <CardDescription>
+            <Card className="hover:neon-border hover:shadow-2xl hover:shadow-brand-red/20 hover:-translate-y-1 transition-all duration-500">
+              <CardHeader className="space-y-2">
+                <CardTitle className="text-3xl font-bold text-brand-red neon-glow-subtle tracking-tight">Contact Information</CardTitle>
+                <CardDescription className="text-base">
                   Reach out to us through any of these channels
                 </CardDescription>
               </CardHeader>
@@ -125,10 +125,10 @@ const Contact = () => {
               </CardContent>
             </Card>
 
-            <Card className="hover:neon-border transition-all duration-300">
-              <CardHeader>
-                <CardTitle className="text-2xl text-brand-red neon-glow-subtle">Send us a Message</CardTitle>
-                <CardDescription>
+            <Card className="hover:neon-border hover:shadow-2xl hover:shadow-brand-red/20 hover:-translate-y-1 transition-all duration-500">
+              <CardHeader className="space-y-2">
+                <CardTitle className="text-3xl font-bold text-brand-red neon-glow-subtle tracking-tight">Send us a Message</CardTitle>
+                <CardDescription className="text-base">
                   Have questions? Want to get involved? Drop us a line!
                 </CardDescription>
               </CardHeader>
@@ -169,10 +169,10 @@ const Contact = () => {
             </Card>
           </div>
 
-          <div ref={ctaRef} className={`mt-12 bg-card p-8 rounded-lg border text-center neon-border fade-in-up delay-500 ${ctaVisible ? 'animate' : ''}`}>
-            <h2 className="text-2xl font-semibold mb-4 text-brand-red neon-glow-subtle">New to Campus?</h2>
-            <p className="text-muted-foreground mb-4">
-              Don't know anyone yet? Perfect! 2FASTT is where many of our members made their first friends at Rutgers. 
+          <div ref={ctaRef} className={`mt-16 bg-gradient-to-br from-card to-card/50 p-10 rounded-xl border-2 text-center neon-border shadow-xl fade-in-up delay-500 ${ctaVisible ? 'animate' : ''}`}>
+            <h2 className="text-3xl font-bold mb-6 text-brand-red neon-glow-subtle tracking-tight">New to Campus?</h2>
+            <p className="text-muted-foreground text-lg mb-6 max-w-2xl mx-auto leading-relaxed">
+              Don't know anyone yet? <span className="text-brand-red font-semibold">Perfect!</span> 2FASTT is where many of our members made their first friends at Rutgers. 
               Come to any run - we'll make sure you feel welcome from day one.
             </p>
             <Button variant="brand" asChild className="neon-border">

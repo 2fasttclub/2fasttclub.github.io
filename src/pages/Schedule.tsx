@@ -51,22 +51,22 @@ const Schedule = () => {
       <Navigation />
       <main className="container mx-auto px-4 pt-24 pb-12">
         <section className="max-w-6xl mx-auto">
-          <h1 ref={titleRef} className={`text-4xl md:text-5xl font-bold mb-4 text-center bg-gradient-to-r from-brand-red to-brand-red-light bg-clip-text text-transparent neon-glow-subtle fade-in-up ${titleVisible ? 'animate' : ''}`}>
+          <h1 ref={titleRef} className={`text-5xl md:text-6xl font-extrabold mb-6 text-center bg-gradient-to-r from-brand-red via-brand-red-light to-brand-red bg-clip-text text-transparent neon-glow-subtle tracking-tight fade-in-up ${titleVisible ? 'animate' : ''}`}>
             Weekly Schedule
           </h1>
-          <p className={`text-xl text-muted-foreground text-center mb-12 fade-in-up delay-200 ${titleVisible ? 'animate' : ''}`}>
-            Join us for regular runs throughout the week. All paces welcome!
+          <p className={`text-xl md:text-2xl text-muted-foreground text-center mb-16 max-w-3xl mx-auto leading-relaxed fade-in-up delay-200 ${titleVisible ? 'animate' : ''}`}>
+            Join us for <span className="text-brand-red font-semibold">regular runs</span> throughout the week. <span className="text-brand-red font-semibold">All paces welcome!</span>
           </p>
           
-          <div ref={cardsRef} className={`grid md:grid-cols-2 gap-6 mb-12 fade-in-up delay-300 ${cardsVisible ? 'animate' : ''}`}>
+          <div ref={cardsRef} className={`grid md:grid-cols-2 gap-8 mb-16 fade-in-up delay-300 ${cardsVisible ? 'animate' : ''}`}>
             {weeklyRuns.map((run, index) => (
-              <Card key={index} className={`hover:shadow-lg hover:shadow-red-500/30 transition-all duration-300 hover:neon-border fade-in-up delay-${(index + 1) * 100} ${cardsVisible ? 'animate' : ''}`}>
-                <CardHeader>
+              <Card key={index} className={`hover:shadow-2xl hover:shadow-brand-red/20 transition-all duration-500 hover:neon-border hover:-translate-y-1 fade-in-up delay-${(index + 1) * 100} ${cardsVisible ? 'animate' : ''}`}>
+                <CardHeader className="space-y-3">
                   <div className="flex justify-between items-start">
-                    <CardTitle className="text-xl text-brand-red neon-glow-subtle">{run.day}</CardTitle>
-                    <Badge variant="secondary">{run.type}</Badge>
+                    <CardTitle className="text-2xl font-bold text-brand-red neon-glow-subtle tracking-tight">{run.day}</CardTitle>
+                    <Badge variant="secondary" className="text-sm font-semibold">{run.type}</Badge>
                   </div>
-                  <CardDescription className="text-base">{run.description}</CardDescription>
+                  <CardDescription className="text-base leading-relaxed">{run.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-3">
@@ -88,10 +88,10 @@ const Schedule = () => {
             ))}
           </div>
 
-          <div ref={infoRef} className={`bg-card p-8 rounded-lg border text-center neon-border fade-in-up delay-500 ${infoVisible ? 'animate' : ''}`}>
-            <h2 className="text-2xl font-semibold mb-4 text-brand-red neon-glow-subtle">New to Running?</h2>
-            <p className="text-muted-foreground mb-6">
-              Don't worry about pace or distance. Our community is here to support you every step of the way. 
+          <div ref={infoRef} className={`bg-gradient-to-br from-card to-card/50 p-10 rounded-xl border-2 text-center neon-border shadow-xl fade-in-up delay-500 ${infoVisible ? 'animate' : ''}`}>
+            <h2 className="text-3xl font-bold mb-6 text-brand-red neon-glow-subtle tracking-tight">New to Running?</h2>
+            <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
+              Don't worry about <span className="text-brand-red font-semibold">pace</span> or <span className="text-brand-red font-semibold">distance</span>. Our community is here to support you every step of the way. 
               Show up, have fun, and we'll help you build your running confidence naturally.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm">

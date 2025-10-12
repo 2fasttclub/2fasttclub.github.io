@@ -18,18 +18,18 @@ const Navigation = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/98 backdrop-blur-lg border-b border-brand-red/20 shadow-lg shadow-brand-red/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
             <div className="relative">
               <img 
                 src={logo} 
                 alt="2FASTT Logo" 
-                className="h-10 w-10 rounded-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-brand-red/30" 
+                className="h-8 w-8 rounded-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-brand-red/30" 
               />
               <div className="absolute inset-0 rounded-lg bg-brand-red/0 group-hover:bg-brand-red/10 transition-all duration-300" />
             </div>
-            <span className="text-2xl font-extrabold bg-gradient-to-r from-brand-red via-brand-red-light to-brand-red bg-clip-text text-transparent neon-glow-subtle tracking-tight">
+            <span className="text-xl font-extrabold text-foreground tracking-tight">
               2FASTT
             </span>
           </Link>

@@ -45,7 +45,7 @@ const Team = () => {
     {
       name: "Ameer R.",
       role: "Run Leader",
-      bio: "TBD",
+      bio: "Leads group runs and helps create a welcoming environment for runners of all levels.",
       year: "TBD",
       major: "TBD",
       funFact: "TBD",

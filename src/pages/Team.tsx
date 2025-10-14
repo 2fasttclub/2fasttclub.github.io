@@ -44,7 +44,7 @@ const Team = () => {
     },
     {
       name: "Ameer R.",
-      role: "TBD",
+      role: "Run Leader",
       bio: "TBD",
       year: "TBD",
       major: "TBD",

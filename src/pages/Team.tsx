@@ -49,7 +49,7 @@ const Team = () => {
       year: "Junior",
       major: "Computer Science",
       funFact: "Used to play ball with Lil Tecca all the time in Queens before he blew up",
-      whyIRun: "TBD",
+      whyIRun: "No better feeling than runners high",
     },
     {
       name: "TBD",

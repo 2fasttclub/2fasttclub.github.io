@@ -48,7 +48,7 @@ const Team = () => {
       bio: "Leads group runs and helps create a welcoming environment for runners of all levels.",
       year: "Junior",
       major: "Computer Science",
-      funFact: "TBD",
+      funFact: "Used to play ball with Lil Tecca all the time in Queens before he blew up",
       whyIRun: "TBD",
     },
     {

@@ -35,8 +35,8 @@ const Team = () => {
     },
     {
       name: "Breanna O.",
-      role: "Run Leader",
-      bio: "Leads group runs and helps create a welcoming environment for runners of all levels.",
+      role: "Chief Run Leader",
+      bio: "Leads by example to ensure run leaders cultivate an inclusive and welcoming atmosphere.",
       year: "Sophomore",
       major: "Bio",
       funFact: "PinkPantheress used to be my camp counselor",
@@ -53,8 +53,8 @@ const Team = () => {
     },
     {
       name: "Ashley T.",
-      role: "TBD",
-      bio: "TBD",
+      role: "Run Leader",
+      bio: "Leads group runs and helps create a welcoming environment for runners of all levels.",
       year: "Sophomore",
       major: "Bio",
       funFact: "I hate sushi",

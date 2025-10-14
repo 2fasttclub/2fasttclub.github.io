@@ -43,7 +43,7 @@ const Team = () => {
       whyIRun: "To improve my overall health and to release built up stress from within",
     },
     {
-      name: "TBD",
+      name: "Ameer R.",
       role: "TBD",
       bio: "TBD",
       year: "TBD",

@@ -58,7 +58,7 @@ const Team = () => {
       year: "Sophomore",
       major: "Bio",
       funFact: "I hate sushi",
-      whyIRun: "TBD",
+      whyIRun: "I run because it makes me happy and keeps me healthy",
     },
     {
       name: "TBD",

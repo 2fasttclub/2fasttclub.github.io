@@ -52,7 +52,7 @@ const Team = () => {
       whyIRun: "No better feeling than runners high",
     },
     {
-      name: "TBD",
+      name: "Ashley T.",
       role: "TBD",
       bio: "TBD",
       year: "TBD",

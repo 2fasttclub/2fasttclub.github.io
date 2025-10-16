@@ -6,6 +6,7 @@ import matthewPhoto from "@/assets/matthew-team-photo.jpg";
 import aaronPhoto from "@/assets/aaron-team-photo-new.jpg";
 import breannaPhoto from "@/assets/breanna-team-photo.png";
 import ameerPhoto from "@/assets/ameer-team-photo.png";
+import ashleyPhoto from "@/assets/ashley-team-photo.png";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Team = () => {
@@ -111,6 +112,12 @@ const Team = () => {
                       ) : index === 3 ? (
                         <AvatarImage
                           src={ameerPhoto}
+                          alt={member.name}
+                          className="object-cover object-center"
+                        />
+                      ) : index === 4 ? (
+                        <AvatarImage
+                          src={ashleyPhoto}
                           alt={member.name}
                           className="object-cover object-center"
                         />

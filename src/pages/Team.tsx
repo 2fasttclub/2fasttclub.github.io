@@ -5,6 +5,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import matthewPhoto from "@/assets/matthew-team-photo.jpg";
 import aaronPhoto from "@/assets/aaron-team-photo-new.jpg";
 import breannaPhoto from "@/assets/breanna-team-photo.png";
+import ameerPhoto from "@/assets/ameer-team-photo.png";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Team = () => {
@@ -106,6 +107,12 @@ const Team = () => {
                           src={breannaPhoto}
                           alt={member.name}
                           className="object-cover object-[center_-10%] scale-125"
+                        />
+                      ) : index === 3 ? (
+                        <AvatarImage
+                          src={ameerPhoto}
+                          alt={member.name}
+                          className="object-cover object-center"
                         />
                       ) : null}
                       <AvatarFallback className="bg-brand-red text-white text-lg">

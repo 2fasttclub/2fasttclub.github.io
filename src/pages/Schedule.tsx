@@ -21,10 +21,10 @@ const Schedule = () => {
       description: "Start your week with a relaxed, social run. Perfect for beginners or recovery days.",
     },
     {
-      day: "TBD", 
-      time: "TBD",
+      day: "October 26th", 
+      time: "4:30 PM",
       type: "Tempo Run",
-      location: "TBD",
+      location: "Deiner Park (College ave)",
       distance: "TBD",
       description: "Moderate intensity workout to build strength and endurance.",
     },

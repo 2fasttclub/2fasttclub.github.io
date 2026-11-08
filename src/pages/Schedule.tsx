@@ -1,97 +1,80 @@
 import Navigation from "@/components/Navigation";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Clock, MapPin, Users } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { GROUPME_URL } from "@/lib/links";
+
+const runTypes = [
+  {
+    type: "Easy Pace Run",
+    description: "A relaxed, social run. Perfect for beginners or recovery days.",
+  },
+  {
+    type: "Tempo Run",
+    description: "Moderate intensity workout to build strength and endurance.",
+  },
+  {
+    type: "Fun Run Friday",
+    description: "End the week with a fun, social run followed by optional hangout time.",
+  },
+  {
+    type: "Long Run",
+    description: "Build endurance with a longer run through scenic routes.",
+  },
+];
 
 const Schedule = () => {
   const [titleRef, titleVisible] = useScrollAnimation<HTMLHeadingElement>();
-  const [cardsRef, cardsVisible] = useScrollAnimation<HTMLDivElement>();
+  const [typesRef, typesVisible] = useScrollAnimation<HTMLDivElement>();
   const [infoRef, infoVisible] = useScrollAnimation<HTMLDivElement>();
-
-  console.log('Schedule component render:', { titleVisible, cardsVisible, infoVisible });
-
-  const weeklyRuns = [
-    {
-      day: "TBD",
-      time: "TBD",
-      type: "Easy Pace Run",
-      location: "TBD",
-      distance: "TBD",
-      description: "Start your week with a relaxed, social run. Perfect for beginners or recovery days.",
-    },
-    {
-      day: "October 26th", 
-      time: "4:30 PM",
-      type: "Tempo Run",
-      location: "Deiner Park (College ave)",
-      distance: "TBD",
-      description: "Moderate intensity workout to build strength and endurance.",
-    },
-    {
-      day: "TBD",
-      time: "TBD",
-      type: "Fun Run Friday",
-      location: "TBD",
-      distance: "TBD",
-      description: "End the week with a fun, social run followed by optional hangout time.",
-    },
-    {
-      day: "TBD",
-      time: "TBD",
-      location: "TBD",
-      type: "Long Run",
-      distance: "TBD",
-      description: "Build endurance with our weekly long run through scenic routes.",
-    },
-  ];
 
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
       <main className="container mx-auto px-4 pt-24 pb-12">
-        <section className="max-w-6xl mx-auto">
-          <h1 ref={titleRef} className={`text-5xl md:text-6xl font-extrabold mb-6 text-center bg-gradient-to-r from-brand-red via-brand-red-light to-brand-red bg-clip-text text-transparent neon-glow-subtle tracking-tight fade-in-up ${titleVisible ? 'animate' : ''}`}>
-            Weekly Schedule
+        <section className="mx-auto max-w-6xl">
+          <h1
+            ref={titleRef}
+            className={`mb-6 text-center text-5xl font-extrabold tracking-tight text-foreground md:text-6xl fade-in-up ${titleVisible ? "animate" : ""}`}
+          >
+            Run Schedule
           </h1>
-          <p className={`text-xl md:text-2xl text-muted-foreground text-center mb-16 max-w-3xl mx-auto leading-relaxed fade-in-up delay-200 ${titleVisible ? 'animate' : ''}`}>
-            Join us for <span className="text-brand-red font-semibold">regular runs</span> throughout the week. <span className="text-brand-red font-semibold">All paces welcome!</span>
+          <p
+            className={`mx-auto mb-10 max-w-3xl text-center text-xl leading-relaxed text-muted-foreground md:text-2xl fade-in-up delay-200 ${titleVisible ? "animate" : ""}`}
+          >
+            Run times and meeting spots are posted in our GroupMe each week. All paces welcome!
           </p>
-          
-          <div ref={cardsRef} className={`grid md:grid-cols-2 gap-8 mb-16 fade-in-up delay-300 ${cardsVisible ? 'animate' : ''}`}>
-            {weeklyRuns.map((run, index) => (
-              <Card key={index} className={`hover:shadow-2xl hover:shadow-brand-red/20 transition-all duration-500 hover:neon-border hover:-translate-y-1 fade-in-up delay-${(index + 1) * 100} ${cardsVisible ? 'animate' : ''}`}>
-                <CardHeader className="space-y-3">
-                  <div className="flex justify-between items-start">
-                    <CardTitle className="text-2xl font-bold text-brand-red neon-glow-subtle tracking-tight">{run.day}</CardTitle>
-                    <Badge variant="secondary" className="text-sm font-semibold">{run.type}</Badge>
-                  </div>
-                  <CardDescription className="text-base leading-relaxed">{run.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-2 text-muted-foreground">
-                      <Clock className="h-4 w-4" />
-                      <span>{run.time}</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-muted-foreground">
-                      <MapPin className="h-4 w-4" />
-                      <span>{run.location}</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-muted-foreground">
-                      <Users className="h-4 w-4" />
-                      <span>{run.distance}</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+          <div className={`mb-20 flex justify-center fade-in-up delay-300 ${titleVisible ? "animate" : ""}`}>
+            <a
+              href={GROUPME_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full bg-brand-red px-8 py-4 text-lg font-bold text-white transition-colors hover:bg-brand-red-hover"
+            >
+              Get the schedule on GroupMe
+            </a>
           </div>
 
-          <div ref={infoRef} className={`bg-gradient-to-br from-card to-card/50 p-10 rounded-xl border-2 text-center neon-border shadow-xl fade-in-up delay-500 ${infoVisible ? 'animate' : ''}`}>
-            <h2 className="text-3xl font-bold mb-6 text-brand-red neon-glow-subtle tracking-tight">New to Running?</h2>
-            <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
-              Don't worry about <span className="text-brand-red font-semibold">pace</span> or <span className="text-brand-red font-semibold">distance</span>. Our community is here to support you every step of the way. 
+          <div ref={typesRef} className={`mb-16 fade-in-up ${typesVisible ? "animate" : ""}`}>
+            <h2 className="mb-6 text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+              Runs we do
+            </h2>
+            <div className="grid gap-px overflow-hidden rounded-lg border border-border bg-border md:grid-cols-2">
+              {runTypes.map((run) => (
+                <div key={run.type} className="bg-card p-6 md:p-8">
+                  <h3 className="text-2xl font-bold tracking-tight text-brand-red">{run.type}</h3>
+                  <p className="mt-2 leading-relaxed text-muted-foreground">{run.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div
+            ref={infoRef}
+            className={`rounded-xl border-2 bg-card p-10 text-center fade-in-up delay-500 ${infoVisible ? "animate" : ""}`}
+          >
+            <h2 className="mb-6 text-3xl font-bold tracking-tight text-brand-red">New to Running?</h2>
+            <p className="mx-auto mb-8 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+              Don't worry about pace or distance. Our community is here to support you every step of the way.
               Show up, have fun, and we'll help you build your running confidence naturally.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm">

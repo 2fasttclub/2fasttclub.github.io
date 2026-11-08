@@ -44,13 +44,6 @@ All colors MUST be HSL.
     --brand-white: 0 0% 100%;
     --brand-black: 0 0% 0%;
     
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--brand-red)), hsl(0 84% 40%));
-    --gradient-hero: radial-gradient(ellipse at center, hsl(0 84% 50% / 0.1), transparent);
-    
-    /* Animations */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --animation-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 
     --sidebar-background: 0 0% 98%;
 
@@ -117,6 +110,15 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 
+  html {
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: hsl(var(--brand-red));
+    color: white;
+  }
+
   /* Scroll animations */
   .fade-in-up {
     opacity: 0;
@@ -151,31 +153,29 @@ All colors MUST be HSL.
     transform: translateX(0);
   }
 
-  /* Neon glow effects */
-  .neon-glow {
-    text-shadow: 
-      0 0 5px hsl(var(--brand-red) / 0.5),
-      0 0 10px hsl(var(--brand-red) / 0.3),
-      0 0 15px hsl(var(--brand-red) / 0.2);
-  }
-
-  .neon-glow-subtle {
-    text-shadow: 
-      0 0 3px hsl(var(--brand-red) / 0.3),
-      0 0 6px hsl(var(--brand-red) / 0.2);
-  }
-
-  .neon-border {
-    box-shadow: 
-      0 0 5px hsl(var(--brand-red) / 0.3),
-      0 0 10px hsl(var(--brand-red) / 0.2),
-      inset 0 0 5px hsl(var(--brand-red) / 0.1);
-  }
-
   /* Staggered animation delays */
   .delay-100 { transition-delay: 0.1s; }
   .delay-200 { transition-delay: 0.2s; }
   .delay-300 { transition-delay: 0.3s; }
   .delay-400 { transition-delay: 0.4s; }
   .delay-500 { transition-delay: 0.5s; }
+}
+
+@layer utilities {
+  .font-condensed {
+    font-stretch: 62%;
+  }
+  .font-wide {
+    font-stretch: 112%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-up,
+  .fade-in-left,
+  .fade-in-right {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

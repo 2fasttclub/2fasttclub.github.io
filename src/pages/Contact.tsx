@@ -62,17 +62,17 @@ const Contact = () => {
       <Navigation />
       <main className="container mx-auto px-4 pt-24 pb-12">
         <section className="max-w-4xl mx-auto">
-          <h1 ref={titleRef} className={`text-5xl md:text-6xl font-extrabold mb-6 text-center bg-gradient-to-r from-brand-red via-brand-red-light to-brand-red bg-clip-text text-transparent neon-glow-subtle tracking-tight fade-in-up ${titleVisible ? 'animate' : ''}`}>
+          <h1 ref={titleRef} className={`text-5xl md:text-6xl font-extrabold mb-6 text-center text-foreground tracking-tight fade-in-up ${titleVisible ? 'animate' : ''}`}>
             Get In Touch
           </h1>
           <p className={`text-xl md:text-2xl text-muted-foreground text-center mb-16 max-w-3xl mx-auto leading-relaxed fade-in-up delay-200 ${titleVisible ? 'animate' : ''}`}>
-            Ready to join our <span className="text-brand-red font-semibold">running community?</span> We'd love to hear from you!
+            Ready to join our running community? We'd love to hear from you!
           </p>
           
           <div ref={cardsRef} className={`grid md:grid-cols-2 gap-8 fade-in-up delay-300 ${cardsVisible ? 'animate' : ''}`}>
-            <Card className="hover:neon-border hover:shadow-2xl hover:shadow-brand-red/20 hover:-translate-y-1 transition-all duration-500">
+            <Card className=" transition-all duration-500">
               <CardHeader className="space-y-2">
-                <CardTitle className="text-3xl font-bold text-brand-red neon-glow-subtle tracking-tight">Contact Information</CardTitle>
+                <CardTitle className="text-3xl font-bold text-brand-red tracking-tight">Contact Information</CardTitle>
                 <CardDescription className="text-base">
                   Reach out to us through any of these channels
                 </CardDescription>
@@ -117,7 +117,7 @@ const Contact = () => {
                 </div>
 
                 <div className="pt-4 border-t">
-                  <h3 className="font-semibold mb-3 text-brand-red neon-glow-subtle">Meeting Times</h3>
+                  <h3 className="font-semibold mb-3 text-brand-red">Meeting Times</h3>
                   <div className="space-y-2 text-sm text-muted-foreground">
                     <p>Check our GroupMe for weekly updates!</p>
                   </div>
@@ -125,9 +125,9 @@ const Contact = () => {
               </CardContent>
             </Card>
 
-            <Card className="hover:neon-border hover:shadow-2xl hover:shadow-brand-red/20 hover:-translate-y-1 transition-all duration-500">
+            <Card className=" transition-all duration-500">
               <CardHeader className="space-y-2">
-                <CardTitle className="text-3xl font-bold text-brand-red neon-glow-subtle tracking-tight">Send us a Message</CardTitle>
+                <CardTitle className="text-3xl font-bold text-brand-red tracking-tight">Send us a Message</CardTitle>
                 <CardDescription className="text-base">
                   Have questions? Want to get involved? Drop us a line!
                 </CardDescription>
@@ -160,7 +160,7 @@ const Contact = () => {
                     />
                   </div>
                   
-                  <Button type="submit" variant="brand" className="w-full neon-border" disabled={isSubmitting}>
+                  <Button type="submit" variant="brand" className="w-full" disabled={isSubmitting}>
                     <MessageCircle className="h-4 w-4 mr-2" />
                     {isSubmitting ? "Sending..." : "Send Message"}
                   </Button>
@@ -169,13 +169,13 @@ const Contact = () => {
             </Card>
           </div>
 
-          <div ref={ctaRef} className={`mt-16 bg-gradient-to-br from-card to-card/50 p-10 rounded-xl border-2 text-center neon-border shadow-xl fade-in-up delay-500 ${ctaVisible ? 'animate' : ''}`}>
-            <h2 className="text-3xl font-bold mb-6 text-brand-red neon-glow-subtle tracking-tight">New to Campus?</h2>
+          <div ref={ctaRef} className={`mt-16 bg-card p-10 rounded-xl border-2 text-center fade-in-up delay-500 ${ctaVisible ? 'animate' : ''}`}>
+            <h2 className="text-3xl font-bold mb-6 text-brand-red tracking-tight">New to Campus?</h2>
             <p className="text-muted-foreground text-lg mb-6 max-w-2xl mx-auto leading-relaxed">
-              Don't know anyone yet? <span className="text-brand-red font-semibold">Perfect!</span> 2FASTT is where many of our members made their first friends at Rutgers. 
+              Don't know anyone yet? Perfect! 2FASTT is where many of our members made their first friends at Rutgers. 
               Come to any run - we'll make sure you feel welcome from day one.
             </p>
-            <Button variant="brand" asChild className="neon-border">
+            <Button variant="brand" asChild className="">
               <a href="https://groupme.com/join_group/110452030/TN5hbw4T" target="_blank" rel="noopener noreferrer">
                 Join the Club Today
               </a>
